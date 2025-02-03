@@ -122,11 +122,11 @@ class _HtmlEditorWidgetMobileState extends State<HtmlEditorWidget> {
             children: [
               widget.htmlToolbarOptions.toolbarPosition ==
                       ToolbarPosition.aboveEditor
-                  ? ToolbarWidget(
+                  ? ExcludeFocus(child: ToolbarWidget(
                       key: toolbarKey,
                       controller: widget.controller,
                       htmlToolbarOptions: widget.htmlToolbarOptions,
-                      callbacks: widget.callbacks)
+                      callbacks: widget.callbacks)),
                   : Container(height: 0, width: 0),
               Expanded(
                 child: InAppWebView(
@@ -539,11 +539,11 @@ class _HtmlEditorWidgetMobileState extends State<HtmlEditorWidget> {
               ),
               widget.htmlToolbarOptions.toolbarPosition ==
                       ToolbarPosition.belowEditor
-                  ? ToolbarWidget(
+                  ? ExcludeFocus(child: ToolbarWidget(
                       key: toolbarKey,
                       controller: widget.controller,
                       htmlToolbarOptions: widget.htmlToolbarOptions,
-                      callbacks: widget.callbacks)
+                      callbacks: widget.callbacks)),
                   : Container(height: 0, width: 0),
             ],
           ),
